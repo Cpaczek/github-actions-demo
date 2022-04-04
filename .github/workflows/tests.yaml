@@ -9,10 +9,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install modules
-        working-directory: ./nuxt
+        working-directory: ./
         run: yarn ci
       - name: Run Tests
-        working-directory: ./nuxt
+        working-directory: ./
         run: yarn run test
   run-nuxt-build:
     name: Run Nuxt Build
