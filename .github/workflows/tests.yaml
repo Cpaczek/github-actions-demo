@@ -1,0 +1,27 @@
+name: 'Tests'
+
+on:
+  pull_request:
+jobs:
+  run-nuxt-lint:
+    name: Run Nuxt Linter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install modules
+        working-directory: ./nuxt
+        run: yarn ci
+      - name: Run Linter
+        working-directory: ./nuxt
+        run: yarn run lint
+  run-nuxt-build:
+    name: Run Nuxt Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install modules
+        working-directory: ./
+        run: yarn ci
+      - name: yarn build
+        working-directory: ./
+        run: yarn run build
